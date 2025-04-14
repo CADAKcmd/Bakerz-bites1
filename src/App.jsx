@@ -18,7 +18,7 @@ import Trays from './Pages/Trays';
 import Pastries from './Pages/Pastries';
 import Pies from './Pages/Pies';
 import Mugs from './Pages/Mugs';
-import BreadAndBurns from './Pages/BreadAndBurns';
+import BreadAndBuns from './Pages/BreadandBuns';
 import Bag from './Pages/Bag';
 import ShopPage from './Pages/ShopPage';
 import CartPage from './Pages/CartPage';
@@ -51,7 +51,7 @@ function App() {
           <Route path="pastries" element={<Pastries />} />
           <Route path="pies" element={<Pies />} />
           <Route path="mugs" element={<Mugs />} />
-          <Route path="bread-buns" element={<BreadAndBurns />} />
+          <Route path="bread-buns" element={<BreadAndBuns />} />
           <Route path="bag" element={<Bag />} />
           {/* shop details */}
           <Route path="/shop" element={<ShopPage />} />
