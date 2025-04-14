@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FiltersSidebar from '../Components/FiltersSidebar';
 import BakeryCard from '../Components/BakeryCard';
-import productsData from '../data/products.json'; 
+import products from '../data/products.json'; // Assuming you have a JSON file with product data
 
 const ShopPage = () => {
   const [products, setProducts] = useState([]);
@@ -12,8 +12,8 @@ const ShopPage = () => {
   const [rating, setRating] = useState(0);
 
   useEffect(() => {
-    setProducts(productsData); 
-    setFiltered(productsData); 
+    setProducts(products); 
+    setFiltered(products); 
   }, []);
 
   useEffect(() => {
