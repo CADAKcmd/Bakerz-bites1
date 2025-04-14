@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
-import CardForm from '../components/CardForm';
+import CardForm from '../Components/CardForm';
 import { useNavigate } from 'react-router-dom';
 
 const CheckOutPage = () => {
