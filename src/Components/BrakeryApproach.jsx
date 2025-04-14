@@ -15,9 +15,9 @@ export default function BakeryApproach() {
           </p>
   
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-            <img src="src/public/assets/cookies.jpg" alt="Macarons" className="rounded shadow-md w-full h-64 object-cover" />
-            <img src="src/public/assets/manbaking.jpg" alt="Baker kneading dough" className="rounded shadow-md w-full h-64 object-cover" />
-            <img src="src/public/assets/sweetcake.jpg" alt="Decorated cakes" className="rounded shadow-md w-full h-64 object-cover" />
+            <img src="/assets/cookies.jpg" alt="Macarons" className="rounded shadow-md w-full h-64 object-cover" />
+            <img src="/assets/manbaking.jpg" alt="Baker kneading dough" className="rounded shadow-md w-full h-64 object-cover" />
+            <img src="/assets/sweetcake.jpg" alt="Decorated cakes" className="rounded shadow-md w-full h-64 object-cover" />
           </div>
         </div>
       </section>

@@ -131,7 +131,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white flex justify-between items-center pt-2">
             <Link to="/" className="flex items-center gap-2 text-xl font-poppins text-black">
-              <img src="src/public/assets/4860511_54307-removebg-preview.png" alt="Logo" className="w-20 h-16" />
+              <img src="/assets/4860511_54307-removebg-preview.png" alt="Logo" className="w-20 h-16" />
               Bakerz Bite
             </Link>
 

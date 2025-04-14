@@ -11,24 +11,24 @@ const products = [
     name: 'Chocolate Cake',
     price: 18,
     originalPrice: 20,
-    image: 'src/public/assets/chocolate.jpg',
+    image: '/assets/chocolate.jpg',
     sale: true,
   },
   {
     name: 'Mixture Cookies',
     price: 18,
-    image: 'src/public/assets/cookies.jpg',
+    image: '/assets/cookies.jpg',
   },
   {
     name: 'Cake blast',
     price: 45,
-    image: 'src/public/assets/strawberrycake.jpg',
+    image: '/assets/strawberrycake.jpg',
   },
   {
     name: 'Strawberry Cake',
     price: 55,
     originalPrice: 66,
-    image: 'src/public/assets/strawcake.jpg',
+    image: '/assets/strawcake.jpg',
     sale: true,
   },
   {

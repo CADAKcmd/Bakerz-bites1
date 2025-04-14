@@ -10,7 +10,7 @@ export default function RealTaste() {
       className={`relative min-h-screen md:h-[80vh] bg-cover bg-center flex items-center justify-center px-4 py-10 transition-all duration-300 ease-in-out ${
         isVideoOpen ? "backdrop-blur-md" : ""
       }`} 
-      style={{ backgroundImage: "url('src/public/assets/Breads.png')" }} // ✅ fixed path
+      style={{ backgroundImage: "url('/assets/Breads.png')" }} // ✅ fixed path
     >
       <div className="text-center z-10 max-w-2xl">
         <h1 className="text-white text-4xl sm:text-5xl font-bold mb-4">Real Taste</h1>
