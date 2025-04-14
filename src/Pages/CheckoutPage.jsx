@@ -3,7 +3,7 @@ import { useCart } from '../context/CartContext';
 import CardForm from '../components/CardForm';
 import { useNavigate } from 'react-router-dom';
 
-const CheckoutPage = () => {
+const CheckOutPage = () => {
   const { cartItems, getTotal, clearCart } = useCart();
   const [method, setMethod] = useState('');
   const [cardValid, setCardValid] = useState(false);
@@ -58,4 +58,4 @@ const CheckoutPage = () => {
   );
 };
 
-export default CheckoutPage;
+export default CheckOutPage;

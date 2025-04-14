@@ -22,9 +22,9 @@ import BreadAndBuns from './Pages/BreadandBuns';
 import Bag from './Pages/Bag';
 import ShopPage from './Pages/ShopPage';
 import CartPage from './Pages/CartPage';
-import CheckoutPage from './Pages/CheckOutPage';
 import SignUpPage from './Pages/SignUpPage';
 import LoginPage from './Pages/LoginPage';
+import CheckOutPage from './Pages/CheckOutPage';
 
 function App() {
   return (
@@ -56,7 +56,7 @@ function App() {
           {/* shop details */}
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/checkout" element={<CheckOutPage />} />
           <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         </Route>
