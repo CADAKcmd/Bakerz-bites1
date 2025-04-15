@@ -1,5 +1,16 @@
 import { useEffect, useState } from 'react';
-import { FaIceCream, FaShoppingBag, FaBirthdayCake, FaBreadSlice, FaUtensils, FaCookieBite, FaChevronLeft, FaChevronRight, FaPiedPiper } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import {
+  FaIceCream,
+  FaShoppingBag,
+  FaBirthdayCake,
+  FaBreadSlice,
+  FaUtensils,
+  FaCookieBite,
+  FaChevronLeft,
+  FaChevronRight,
+  FaPiedPiper,
+} from 'react-icons/fa';
 
 const slides = [
   {
@@ -61,18 +72,26 @@ export default function CarouselPage() {
   return (
     <div className="relative w-full overflow-hidden mt-10">
       {/* Carousel */}
-      <div className="w-full h-[80vh] relative">
+      <div className="w-full h-[60vh] sm:h-[70vh] md:h-[85vh] relative">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${index === current ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? 'opacity-100' : 'opacity-0'}`}
           >
-            <img src={slide.image} alt="carousel" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center px-4">
-              <p className="text-yellow-500 text-sm mb-2 font-poppins">{slide.title}</p>
-              <h2 className="text-4xl md:text-6xl font-bold mb-4 font-sans-serif">{slide.subtitle}</h2>
-              <p className="mb-4 text-lg md:text-xl">{slide.description}</p>
-              <button className="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600 transition">SHOP NOW</button>
+            <img
+              src={slide.image}
+              alt={slide.subtitle}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center px-4 sm:px-8 md:px-16">
+              <p className="text-yellow-400 text-sm sm:text-base mb-2">{slide.title}</p>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2">{slide.subtitle}</h2>
+              <p className="text-md sm:text-lg md:text-xl mb-4">{slide.description}</p>
+              <Link to="/shop">
+                <button className="bg-yellow-500 text-white px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base rounded hover:bg-yellow-600 transition">
+                  SHOP NOW
+                </button>
+              </Link>
             </div>
           </div>
         ))}
@@ -82,38 +101,48 @@ export default function CarouselPage() {
           onClick={prevSlide}
           className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-yellow-500 transition"
         >
-          <FaChevronLeft size={24} />
+          <FaChevronLeft size={20} />
         </button>
         <button
           onClick={nextSlide}
           className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-yellow-500 transition"
         >
-          <FaChevronRight size={24} />
+          <FaChevronRight size={20} />
         </button>
       </div>
 
       {/* Category List */}
-      <div className="grid grid-cols-3 md:grid-cols-6 bg-black text-white text-center">
-        {/* <Link to="/ice-cream"> */}
-        <button className="py-4 hover:bg-yellow-500 transition flex flex-col items-center gap-1">
-          <FaIceCream className="text-2xl" /> Ice Cream
-        </button>
-        {/* </Link> */}
-        <button className="py-4 hover:bg-yellow-500 transition flex flex-col items-center gap-1">
-          <FaShoppingBag className="text-2xl" /> Merchandise
-        </button>
-        <button className="py-4 hover:bg-yellow-500 transition flex flex-col items-center gap-1">
-          <FaBirthdayCake className="text-2xl" /> Cake
-        </button>
-        <button className="py-4 hover:bg-yellow-500 transition flex flex-col items-center gap-1">
-          <FaBreadSlice className="text-2xl" /> Bread & Buns
-        </button>
-        <button className="py-4 hover:bg-yellow-500 transition flex flex-col items-center gap-1">
-          <FaPiedPiper className="text-2xl" /> Pie
-        </button>
-        <button className="py-4 hover:bg-yellow-500 transition flex flex-col items-center gap-1">
-          <FaCookieBite className="text-2xl" /> Pastry
-        </button>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 bg-black text-white text-center text-sm sm:text-base">
+        <Link to="/ice-cream">
+          <button className="py-4 w-full hover:bg-yellow-500 transition flex flex-col items-center gap-1">
+            <FaIceCream className="text-xl sm:text-2xl" /> Ice Cream
+          </button>
+        </Link>
+        <Link to="/bag">
+          <button className="py-4 w-full hover:bg-yellow-500 transition flex flex-col items-center gap-1">
+            <FaShoppingBag className="text-xl sm:text-2xl" /> Merchandise
+          </button>
+        </Link>
+        <Link to="/cakes">
+          <button className="py-4 w-full hover:bg-yellow-500 transition flex flex-col items-center gap-1">
+            <FaBirthdayCake className="text-xl sm:text-2xl" /> Cake
+          </button>
+        </Link>
+        <Link to="/bread-buns">
+          <button className="py-4 w-full hover:bg-yellow-500 transition flex flex-col items-center gap-1">
+            <FaBreadSlice className="text-xl sm:text-2xl" /> Bread & Buns
+          </button>
+        </Link>
+        <Link to="/pies">
+          <button className="py-4 w-full hover:bg-yellow-500 transition flex flex-col items-center gap-1">
+            <FaPiedPiper className="text-xl sm:text-2xl" /> Pie
+          </button>
+        </Link>
+        <Link to="/Pastries">
+          <button className="py-4 w-full hover:bg-yellow-500 transition flex flex-col items-center gap-1">
+            <FaCookieBite className="text-xl sm:text-2xl" /> Pastry
+          </button>
+        </Link>
       </div>
     </div>
   );

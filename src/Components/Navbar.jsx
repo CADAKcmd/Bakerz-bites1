@@ -102,7 +102,6 @@ const Navbar = () => {
   const aboutLinks = [
     { label: 'Services', link: '/service' },
     { label: 'Gallery Classic', link: '/gallery' },
-   
   ];
 
   const listLinks = [
@@ -123,8 +122,11 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
-      <div className="bg-black text-white text-sm text-center px-4 py-1">
-        OPEN NOW FROM 11:00 AM To 7:00 PM ({currentTime})
+      {/* Scrolling Banner */}
+      <div className="bg-black text-white text-sm overflow-hidden h-7">
+        <div className="animate-marquee whitespace-nowrap px-4">
+          OPEN NOW FROM 10:00 AM TO 7:00 PM ({currentTime})
+        </div>
       </div>
 
       <nav className="bg-white shadow-md h-20">
@@ -137,35 +139,13 @@ const Navbar = () => {
 
             <div className="hidden md:flex gap-6 text-black items-center">
               <Link to="/" className={isActive('/') ? 'text-yellow-500 font-poppins' : ''}>Home</Link>
-             
               <Link to="/menu" className={isActive('/menu') ? 'text-yellow-500 font-poppins' : ''}>Menu</Link>
 
-              <Dropdown
-                label="List"
-                items={listLinks}
-                name="list"
-                openDropdown={openDropdown}
-                setOpenDropdown={setOpenDropdown}
-              />
-
+              <Dropdown label="List" items={listLinks} name="list" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} />
               <Link to="/blog" className={isActive('/blog') ? 'text-yellow-500 font-poppins' : ''}>Blogs</Link>
               <Link to="/shop" className={isActive('/shop') ? 'text-yellow-500 font-poppins' : ''}>Shop</Link>
-              <Dropdown
-                label="Merchandise"
-                items={merchLinks}
-                name="merch"
-                openDropdown={openDropdown}
-                setOpenDropdown={setOpenDropdown}
-              />
-
-              <Dropdown
-                label="About Us"
-                items={aboutLinks}
-                name="about"
-                openDropdown={openDropdown}
-                setOpenDropdown={setOpenDropdown}
-              />
-
+              <Dropdown label="Merchandise" items={merchLinks} name="merch" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} />
+              <Dropdown label="About Us" items={aboutLinks} name="about" openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} />
               <Link to="/contactus" className={isActive('/contactus') ? 'text-yellow-500 font-poppins' : ''}>Contact Us</Link>
             </div>
 
@@ -179,57 +159,38 @@ const Navbar = () => {
           </div>
         </div>
 
-        
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden px-4 pb-4 flex flex-col gap-2 text-sm bg-white shadow-md">
             <Link to="/" onClick={closeMobileMenu} className={isActive('/') ? 'text-yellow-500' : ''}>Home</Link>
             <Link to="/cakes" onClick={closeMobileMenu} className={isActive('/cakes') ? 'text-yellow-500' : ''}>Cakes</Link>
             <Link to="/menu" onClick={closeMobileMenu} className={isActive('/menu') ? 'text-yellow-500' : ''}>Menu</Link>
 
-            <button
-              onClick={() => toggleDropdown('list')}
-              className="flex justify-between items-center w-full font-medium py-2"
-            >
-              List {openDropdown === 'list' ? <FiChevronUp /> : <FiChevronDown />}
-            </button>
-            <div className={`pl-4 transition-all duration-300 overflow-hidden ${openDropdown === 'list' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-              {listLinks.map((item) => (
-                <Link key={item.label} to={item.link} onClick={closeMobileMenu} className="block py-1">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+            {/* Mobile Dropdowns */}
+            {[
+              { label: 'List', name: 'list', links: listLinks },
+              { label: 'Merchandise', name: 'merch', links: merchLinks },
+              { label: 'About Us', name: 'about', links: aboutLinks },
+            ].map(({ label, name, links }) => (
+              <div key={name}>
+                <button
+                  onClick={() => toggleDropdown(name)}
+                  className="flex justify-between items-center w-full font-medium py-2"
+                >
+                  {label} {openDropdown === name ? <FiChevronUp /> : <FiChevronDown />}
+                </button>
+                <div className={`pl-4 transition-all duration-300 overflow-hidden ${openDropdown === name ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  {links.map((item) => (
+                    <Link key={item.label} to={item.link} onClick={closeMobileMenu} className="block py-1">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
 
             <Link to="/blog" onClick={closeMobileMenu} className={isActive('/blog') ? 'text-yellow-500' : ''}>Blogs</Link>
             <Link to="/shop" onClick={closeMobileMenu} className={isActive('/shop') ? 'text-yellow-500' : ''}>Shop</Link>
-            <button
-              onClick={() => toggleDropdown('merch')}
-              className="flex justify-between items-center w-full font-medium py-2"
-            >
-              Merchandise {openDropdown === 'merch' ? <FiChevronUp /> : <FiChevronDown />}
-            </button>
-            <div className={`pl-4 transition-all duration-300 overflow-hidden ${openDropdown === 'merch' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-              {merchLinks.map((item) => (
-                <Link key={item.label} to={item.link} onClick={closeMobileMenu} className="block py-1">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-
-            <button
-              onClick={() => toggleDropdown('about')}
-              className="flex justify-between items-center w-full font-medium py-2"
-            >
-              About Us {openDropdown === 'about' ? <FiChevronUp /> : <FiChevronDown />}
-            </button>
-            <div className={`pl-4 transition-all duration-300 overflow-hidden ${openDropdown === 'about' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-              {aboutLinks.map((item) => (
-                <Link key={item.label} to={item.link} onClick={closeMobileMenu} className="block py-1">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-
             <Link to="/contactus" onClick={closeMobileMenu} className={isActive('/contactus') ? 'text-yellow-500' : ''}>Contact Us</Link>
           </div>
         )}

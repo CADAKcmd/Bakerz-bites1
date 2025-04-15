@@ -8,72 +8,31 @@ const glassData = [
     id: 1,
     name: "Glass Tumbler",
     price: 18,
-    image: "/src/assets/glass1.jpg",
+    image: "https://i.pinimg.com/736x/2a/1d/e1/2a1de14f32fdb605056b8db8fc45b33c.jpg",
     description: "Elegant glass tumbler for everyday beverages.",
   },
   {
     id: 2,
     name: "Vintage Glass Jar",
     price: 22,
-    image: "/src/assets/glass2.jpg",
+    image: "https://i.pinimg.com/736x/f7/33/15/f7331577bd9c274342d2a586d7ac3f89.jpg",
     description: "Classic glass jar for cookies or dry storage.",
   },
   {
     id: 3,
     name: "Iced Latte Glass",
     price: 16,
-    image: "/src/assets/glass3.jpg",
+    image: "https://i.pinimg.com/736x/ba/b7/67/bab767a1effc690edba4a8df01262753.jpg",
     description: "Tall glass perfect for iced coffee or smoothies.",
   },
   {
     id: 4,
     name: "Etched Glass Cup",
     price: 20,
-    image: "/src/assets/glass4.jpg",
+    image: "https://i.pinimg.com/736x/22/05/08/220508692154b54baaf3150505e6fee4.jpg",
     description: "Delicate etched design for premium presentation.",
   },
-  {
-    id: 5,
-    name: "Glass Pitcher",
-    price: 28,
-    image: "/src/assets/glass5.jpg",
-    description: "Large pitcher for juices or table service.",
-  },
-  {
-    id: 6,
-    name: "Mini Shot Glass",
-    price: 6,
-    image: "/src/assets/glass6.jpg",
-    description: "Compact shot glass for tastings or décor.",
-  },
-  {
-    id: 7,
-    name: "Smoothie Glass",
-    price: 17,
-    image: "/src/assets/glass7.jpg",
-    description: "Curvy glass for smoothies and thick drinks.",
-  },
-  {
-    id: 8,
-    name: "Clear Dessert Cup",
-    price: 12,
-    image: "/src/assets/glass8.jpg",
-    description: "Serve desserts or parfaits in style.",
-  },
-  {
-    id: 9,
-    name: "Measuring Glass",
-    price: 10,
-    image: "/src/assets/glass9.jpg",
-    description: "Dual-purpose measuring and serving.",
-  },
-  {
-    id: 10,
-    name: "Elegant Coupe Glass",
-    price: 25,
-    image: "/src/assets/glass10.jpg",
-    description: "Sophisticated design for special occasions.",
-  },
+  
 ];
 
 const Glass = () => {
@@ -84,7 +43,7 @@ const Glass = () => {
       {/* Hero Section */}
       <div
         className="relative h-[300px] bg-cover bg-center"
-        style={{ backgroundImage: `url('/assets/glass1.jpg')` }}
+        style={{ backgroundImage: `url('https://i.pinimg.com/736x/30/04/2e/30042eaf538bf84e7ea6b3281ecea48e.jpg')` }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <h1 className="text-white text-4xl font-bold">Glassware</h1>
@@ -149,9 +108,12 @@ const Glass = () => {
             <div className="text-lg font-semibold text-yellow-600">
               ${selectedProduct.price.toFixed(2)}
             </div>
+            <Link to='/shop'>
             <button className="mt-4 w-full py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition">
-              Confirm Add to Cart
+              Shop Now
             </button>
+            </Link>
+            
           </div>
         </div>
       )}
@@ -160,7 +122,7 @@ const Glass = () => {
       <section className="bg-gray-100 py-10">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-extrabold text-center mb-10 text-yellow-600">
-            🥂 Featured Glass Items
+             Featured Glass Items
           </h2>
 
           <Swiper

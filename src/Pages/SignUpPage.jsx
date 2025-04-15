@@ -54,7 +54,7 @@ const SignUpPage = () => {
         </form>
         <p className="text-sm mt-4 text-center text-black">
           Already have an account?{' '}
-          <Link to="/login" className="text-white underline">
+          <Link to="/login" className="text-black underline">
             Login
           </Link>
         </p>

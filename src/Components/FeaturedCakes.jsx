@@ -1,7 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { useCart } from '../context/CartContext';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'; // ✅ Navigation
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -46,9 +48,8 @@ const products = [
 ];
 
 export default function FeaturedCakes() {
-  const handleAddToCart = (product) => {
-    console.log(`${product.name} added to cart`);
-  };
+  const { addToCart } = useCart();
+  const navigate = useNavigate(); 
 
   return (
     <div className="w-full bg-yellow-400 py-12 px-4 md:px-12 relative">
@@ -61,7 +62,7 @@ export default function FeaturedCakes() {
         </p>
       </div>
 
-      {/* Custom navigation buttons */}
+      {/* Navigation Buttons */}
       <div className="swiper-button-prev-custom absolute top-1/2 left-2 z-10 text-white cursor-pointer">
         <FaArrowLeft size={30} />
       </div>
@@ -115,7 +116,10 @@ export default function FeaturedCakes() {
                   </span>
                 </div>
                 <button
-                  onClick={() => handleAddToCart(product)}
+                  onClick={() => {
+                    addToCart(product); // ✅ Passing the right item
+                    navigate('/cart'); // ✅ Go to cart page
+                  }}
                   className="mt-4 px-4 py-2 bg-yellow-500 hover:bg-yellow-600 transition text-white rounded"
                 >
                   Add to cart
@@ -126,10 +130,9 @@ export default function FeaturedCakes() {
         ))}
       </Swiper>
 
-      {/* Pagination dots */}
       <div className="swiper-pagination-custom mt-6 text-center" />
 
-      {/* Custom styles for pagination dots */}
+      {/* Pagination Style */}
       <style>{`
         .swiper-pagination-custom .swiper-pagination-bullet {
           background-color: black;

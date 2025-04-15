@@ -4,11 +4,11 @@ const Menu = () => {
   return (
     <div className="fonnt-poppins mt-20">
 
-      <div className="relative">
+      <div className="relative bg-black">
         <img
-          src="https://img.freepik.com/free-photo/flour-scattered-wooden-table_53876-144487.jpg?t=st=1744585898~exp=1744589498~hmac=23da99a5ecbe0245e30b7d28cf40af34d42e75c29c32cd71bac764d09da38416&w=900"
+          src="https://plus.unsplash.com/premium_photo-1666675707746-ec5f0e689d97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Menu Banner"
-          className="w-full h-[300px] object-cover"
+          className="w-full h-[300px] object-cover opacity-40r"
         />
         <div className="absolute inset-0 "></div>
         <h1 className="absolute inset-0 flex items-center justify-center text-white text-5xl font-bold">
@@ -55,9 +55,12 @@ const Menu = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <img src="/macarons.jpg" alt="Macarons" className="w-full h-[200px] object-cover rounded" />
-        <img src="/baking.jpg" alt="Baking" className="w-full h-[200px] object-cover rounded" />
-        <img src="/green-cake.jpg" alt="Green Cake" className="w-full h-[200px] object-cover rounded" />
+        <img src="https://images.unsplash.com/photo-1597528662465-55ece5734101?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+        alt="Macarons" className="w-full h-[200px] object-cover rounded" />
+        <img src="https://images.unsplash.com/photo-1679812000030-44c07cd1f2bf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+        alt="Baking" className="w-full h-[200px] object-cover rounded" />
+        <img src="https://plus.unsplash.com/premium_photo-1716647126905-3acaec3fc2e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+        alt="Green Cake" className="w-full h-[200px] object-cover rounded" />
       </div>
     </div>
   );

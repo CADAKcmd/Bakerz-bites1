@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
@@ -27,7 +28,9 @@ const LatestBlogSection = () => {
     <section className="py-16 px-4 bg-white text-gray-800">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-2">Bakery Blog</h2>
+          <Link to='/blog'>
+           <h2 className="text-4xl font-bold text-gray-900 hover:text-yellow-400 mb-2">Bakery Blog</h2>
+          </Link>
           <p className="italic text-gray-500">
             Get inspired with our latest baking guides, tips, and delicious ideas.
           </p>
@@ -44,14 +47,11 @@ const LatestBlogSection = () => {
                 alt={post.title}
                 className="w-full h-64 object-cover"
               />
-              <div className="bg-white p-5">
+              <div className="bg-white p-5 flex flex-col h-full">
                 <p className="text-sm text-gray-400 mb-2">{post.date}</p>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{post.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{post.content}</p>
-                <button className="flex items-center gap-2 text-yellow-600 hover:underline mt-auto">
-                  Go to Blog
-                  <ArrowRight size={16} />
-                </button>
+                
               </div>
             </div>
           ))}

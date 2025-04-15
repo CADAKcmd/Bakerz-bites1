@@ -79,11 +79,11 @@ export default function BlogPage() {
   return (
     <div className="w-full min-h-screen bg-gray-100 mt-20">
       {/* Top banner */}
-      <div className="relative h-72 w-full bg-yellow-300 flex items-center justify-center text-white text-center">
+      <div className="relative h-72 w-full bg-black flex items-center justify-center text-white text-center">
         <img
-          src="https://i.pinimg.com/originals/6e/88/30/6e883015e6f0bd5748ce5aa2ac3cf93c.jpg"
+          src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Blog Banner"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
         <h1 className="relative text-4xl font-bold uppercase tracking-wide drop-shadow-md">
           Our Blog

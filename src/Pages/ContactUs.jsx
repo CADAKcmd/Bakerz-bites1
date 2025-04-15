@@ -18,7 +18,7 @@ const ContactUs = () => {
   return (
     <div className="w-full">
       {/* Hero Section with Background Image */}
-      <div className="relative h-64 md:h-96 bg-cover bg-center bg-yellow-50 flex items-center justify-center" style={{ backgroundImage: 'url(/images/contact-hero.jpg)' }}>
+      <div className="relative h-64 md:h-96 bg-cover bg-center bg-yellow-50 flex items-center justify-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)' }}>
         <h1 className="text-white text-4xl md:text-5xl font-bold z-10">Contact Us</h1>
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>

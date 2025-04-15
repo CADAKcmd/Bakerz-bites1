@@ -190,22 +190,31 @@ const Cakes = () => {
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-1/3 max-w-md">
-            <h2 className="text-2xl font-semibold mb-4">{selectedCake.name}</h2>
-            <img src={selectedCake.image} alt={selectedCake.name} className="w-full h-48 object-cover mb-4" />
-            <p className="text-gray-700 mb-4">{selectedCake.description}</p>
-            <div className="flex justify-between items-center mb-4">
-              <span className="text-lg font-bold">${selectedCake.price.toFixed(2)}</span>
-              {selectedCake.oldPrice && (
-                <span className="line-through text-sm text-gray-500">${selectedCake.oldPrice.toFixed(2)}</span>
-              )}
-            </div>
-            <button onClick={closeModal} className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded">
-              Close
-            </button>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4">
+        <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-md">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">{selectedCake.name}</h2>
+          <img
+            src={selectedCake.image}
+            alt={selectedCake.name}
+            className="w-full h-40 sm:h-48 object-cover mb-4 rounded"
+          />
+          <p className="text-gray-700 mb-4 text-sm sm:text-base">{selectedCake.description}</p>
+          <div className="flex justify-between items-center mb-4">
+            <span className="text-base sm:text-lg font-bold">${selectedCake.price.toFixed(2)}</span>
+            {selectedCake.oldPrice && (
+              <span className="line-through text-sm text-gray-500">
+                ${selectedCake.oldPrice.toFixed(2)}
+              </span>
+            )}
           </div>
+          <button
+            onClick={closeModal}
+            className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded"
+          >
+            Close
+          </button>
         </div>
+      </div>
       )}
     </div>
   );

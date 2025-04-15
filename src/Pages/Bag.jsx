@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -32,7 +33,27 @@ const bagsData = [
     image: "https://i.pinimg.com/736x/2c/9c/a7/2c9ca7421a8dcaa5f87ef7844cf95377.jpg",
     description: "Lightweight and foldable bag perfect for shopping.",
   },
-  
+];
+
+const carouselData = [
+  {
+    id: 1,
+    title: "Tote Trend",
+    description: "Spacious & stylish – your go-to everyday carry bag.",
+    image: "https://i.pinimg.com/736x/6d/87/5b/6d875b8c2ca860a8ffc0672ca0b53ea4.jpg",
+  },
+  {
+    id: 2,
+    title: "Jute Charm",
+    description: "Eco-friendly jute elegance with Bakerz Bite flair.",
+    image: "https://i.pinimg.com/736x/00/d0/24/00d0248fd279b56aecafdda7d559e7c5.jpg",
+  },
+  {
+    id: 3,
+    title: "Mini Must-Have",
+    description: "Light, compact, and always trendy — carry less, shine more.",
+    image: "https://i.pinimg.com/736x/09/89/c4/0989c410cf1ffaf23bfb9046468a3338.jpg",
+  },
 ];
 
 const Bag = () => {
@@ -114,24 +135,27 @@ const Bag = () => {
           slidesPerView={1}
           className="max-w-6xl mx-auto"
         >
-          {[1, 2, 3].map((i) => (
-            <SwiperSlide key={i}>
+          {carouselData.map((item) => (
+            <SwiperSlide key={item.id}>
               <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-3xl shadow-xl overflow-hidden p-6 md:p-10">
                 <img
-                  src={`/src/assets/bag-carousel${i}.jpg`}
-                  alt={`Bag Highlight ${i}`}
+                  src={item.image}
+                  alt={item.title}
                   className="w-full md:w-1/2 h-[320px] object-cover rounded-2xl"
                 />
                 <div className="text-center md:text-left flex-1">
                   <h3 className="text-3xl font-bold text-yellow-800 mb-4">
-                    Highlight Bag {i}
+                    {item.title}
                   </h3>
                   <p className="italic text-gray-600 mb-6 leading-relaxed">
-                    Discover functionality and flair with our handpicked designs.
+                    {item.description}
                   </p>
+                  <Link to='/shop'>
                   <button className="px-6 py-3 bg-yellow-600 text-white text-sm md:text-base rounded-lg hover:bg-yellow-700 transition duration-300">
                     Shop Now
                   </button>
+                  </Link>
+                  
                 </div>
               </div>
             </SwiperSlide>

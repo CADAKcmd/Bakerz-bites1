@@ -1,4 +1,5 @@
-import { FaTruck, FaStore, FaBirthdayCake, FaBoxOpen, FaCookieBite, FaConciergeBell, FaHandsHelping, FaTshirt, FaMugHot } from 'react-icons/fa';
+import { FaTruck, FaStore, FaBirthdayCake, FaBoxOpen, FaCookieBite, FaConciergeBell, FaHandsHelping, FaMugHot } from 'react-icons/fa';
+import { FaBagShopping } from 'react-icons/fa6';
 
 const Services = () => {
   return (
@@ -70,9 +71,9 @@ const Services = () => {
 
         <div className="flex flex-wrap justify-center gap-6">
           {[
-            { title: "Custom Aprons", image: "/src/assets/merch-apron.jpg", icon: <FaTshirt className="text-yellow-500 text-2xl mb-2" /> },
-            { title: "Bakerz Mugs", image: "/src/assets/merch-mug.jpg", icon: <FaMugHot className="text-yellow-500 text-2xl mb-2" /> },
-            { title: "Pastry Trays", image: "/src/assets/merch-tray.jpg", icon: <FaConciergeBell className="text-yellow-500 text-2xl mb-2" /> },
+            { title: "Custom Bags", image: "https://i.pinimg.com/736x/da/0c/98/da0c9831a6f4052fbdfab6e918dd7b87.jpg", icon: <FaBagShopping className="text-yellow-500 text-2xl mb-2" /> },
+            { title: "Bakerz Mugs", image: "https://i.pinimg.com/736x/58/a4/97/58a497be86bd56e6d41aad4a12286d6c.jpg", icon: <FaMugHot className="text-yellow-500 text-2xl mb-2" /> },
+            { title: "Pastry Trays", image: "https://i.pinimg.com/736x/91/d8/30/91d830f511eb0b3e2bdb0e92b3d5caac.jpg", icon: <FaConciergeBell className="text-yellow-500 text-2xl mb-2" /> },
           ].map((item, i) => (
             <div
               key={i}
